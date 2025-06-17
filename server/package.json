@@ -1,0 +1,29 @@
+{
+  "name": "daoify-server",
+  "version": "1.0.0",
+  "description": "Server for deploying DAO contracts on Aurora",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "compile": "node scripts/compile.js"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.3.22",
+    "@near-js/accounts": "^2.0.3",
+    "@near-js/client": "^2.0.3",
+    "@near-js/crypto": "^2.0.3",
+    "@near-js/keystores": "^2.0.3",
+    "ai": "^4.3.16",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1",
+    "express": "^4.18.2",
+    "puppeteer": "^24.10.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.24.3",
+    "nodemon": "^3.1.0"
+  }
+}
