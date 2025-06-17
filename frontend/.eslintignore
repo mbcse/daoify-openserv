@@ -1,0 +1,8 @@
+# Ignore everything for deployment
+*
+**/*
+.next/
+node_modules/
+out/
+build/
+dist/ 
