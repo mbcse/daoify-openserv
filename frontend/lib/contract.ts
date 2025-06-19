@@ -2,6 +2,7 @@ import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from 
 import { parseEther } from 'viem'
 import { publicClient } from './wagmi'
 import { getApiUrl, API_ENDPOINTS } from './config'
+import { ensureCorrectNetwork } from './network-utils'
 
 // DAO Contract ABI
 const DAO_ABI = [
@@ -94,6 +95,9 @@ export function useDAOContract(contractAddress: string) {
 
   const handleCreateProposal = async (description: string) => {
     try {
+      // Ensure user is on correct network before transaction
+      await ensureCorrectNetwork()
+      
       const tx = await createProposal({
         address: contractAddress as `0x${string}`,
         abi: DAO_ABI,
@@ -109,6 +113,9 @@ export function useDAOContract(contractAddress: string) {
 
   const handleVote = async (proposalId: bigint) => {
     try {
+      // Ensure user is on correct network before transaction
+      await ensureCorrectNetwork()
+      
       await vote({
         address: contractAddress as `0x${string}`,
         abi: DAO_ABI,
