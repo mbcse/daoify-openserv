@@ -220,7 +220,7 @@ app.post('/api/execute', async (req, res) => {
 
         // Call the agent endpoint to process the proposal
         console.log('🤖 Calling agent endpoint to process proposal...');
-        const agentResponse = await fetch('http://localhost:4000/process-proposal', {
+        const agentResponse = await fetch(process.env.PROPOSAL_AGENT_URL || 'http://localhost:4000/process-proposal', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
